@@ -570,21 +570,27 @@ section {
     background: var(--darker-bg);
 }
 
+/* Project Cards Integration with Existing Theme */
 .project-card {
     background: var(--card-bg);
-    padding: 2.5rem;
     border-radius: 20px;
-    transition: all 0.3s ease;
+    padding: 2.5rem;
     border: 2px solid transparent;
-    height: 100%;
+    transition: all 0.35s ease;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary-color);
     box-shadow: 0 15px 40px rgba(56, 189, 248, 0.2);
+}
+
+.project-card.coming-soon {
+    opacity: 0.6;
+    pointer-events: none;
 }
 
 .project-icon {
@@ -606,15 +612,15 @@ section {
 
 .project-description {
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
     flex-grow: 1;
+    margin-bottom: 1.5rem;
 }
 
 .project-tags {
     display: flex;
     gap: 0.5rem;
-    margin-bottom: 1.5rem;
     flex-wrap: wrap;
+    margin-bottom: 1.5rem;
 }
 
 .tag {
@@ -632,11 +638,16 @@ section {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    transition: gap 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .project-link:hover {
     gap: 1rem;
+}
+
+.project-link.disabled {
+    cursor: default;
+    opacity: 0.7;
 }
 
 /* ========================================
@@ -843,4 +854,5 @@ section {
     section {
         padding: 60px 0;
     }
+
 }
