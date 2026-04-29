@@ -150,7 +150,8 @@ section {
     transition: color 0.3s ease;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
     color: var(--primary-color) !important;
 }
 
@@ -165,7 +166,8 @@ section {
     transition: width 0.3s ease;
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link.active::after {
     width: 100%;
 }
 
@@ -254,7 +256,7 @@ section {
     background: rgba(56, 189, 248, 0.1);
     border: 2px solid var(--primary-color);
     color: var(--primary-color);
-    padding: 0.5rem 1.5rem;
+    padding: 0.6rem 1.5rem;
     border-radius: 50px;
     font-weight: 600;
     display: inline-flex;
@@ -287,6 +289,7 @@ section {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    cursor: pointer;
 }
 
 .btn-primary-custom:hover {
@@ -307,6 +310,7 @@ section {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    cursor: pointer;
 }
 
 .btn-outline-custom:hover {
@@ -451,11 +455,14 @@ section {
     padding: 3rem;
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
 .about-card:hover {
     transform: translateY(-10px);
+    border-color: var(--primary-color);
+    box-shadow: 0 15px 50px rgba(56, 189, 248, 0.2);
 }
 
 .about-text {
@@ -575,28 +582,12 @@ section {
 .projects-section {
     background: var(--darker-bg);
 }
-/* Fix for the 2-column grid alignment */
+
 .projects-section .row {
     display: flex;
     flex-wrap: wrap;
 }
 
-.project-card {
-    height: 100%; /* Makes all cards in a row the same height */
-    display: flex;
-    flex-direction: column;
-}
-
-.project-description {
-    flex-grow: 1; /* Pushes the 'View Project' link to the bottom */
-}
-
-/* Allow interaction with links even on coming-soon if you remove the pointer-events none */
-.project-card.coming-soon {
-    opacity: 0.6;
-    /* Optional: filter: grayscale(1); Makes them look truly "inactive" */
-}
-/* Project Cards Integration with Existing Theme */
 .project-card {
     background: var(--card-bg);
     border-radius: 20px;
@@ -656,6 +647,13 @@ section {
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 500;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background: rgba(56, 189, 248, 0.2);
+    border-color: var(--primary-color);
 }
 
 .project-link {
@@ -669,6 +667,7 @@ section {
 
 .project-link:hover {
     gap: 1rem;
+    transform: translateX(5px);
 }
 
 .project-link.disabled {
@@ -684,6 +683,13 @@ section {
     padding: 3rem;
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.contact-container:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 15px 50px rgba(56, 189, 248, 0.2);
 }
 
 .contact-info {
@@ -858,12 +864,21 @@ section {
         font-size: 1.2rem;
     }
 
+    .hero-badges {
+        justify-content: flex-start;
+    }
+
     .hero-buttons {
         flex-direction: column;
     }
 
     .btn-primary-custom,
     .btn-outline-custom {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .badge-custom .btn-outline-custom {
         width: 100%;
         justify-content: center;
     }
