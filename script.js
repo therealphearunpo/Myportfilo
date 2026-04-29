@@ -1,6 +1,4 @@
-// ========================================
 // NAVBAR SCROLL EFFECT
-// ========================================
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
@@ -10,9 +8,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// ========================================
 // TYPING EFFECT
-// ========================================
 const typedTextElement = document.getElementById('typed-text');
 const texts = [
     'IT Engineering Student',
@@ -51,14 +47,12 @@ function typeEffect() {
     setTimeout(typeEffect, typingSpeed);
 }
 
-// Start typing effect when page loads
+// Start typing effect
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeEffect, 1000);
 });
 
-// ========================================
 // SMOOTH SCROLLING FOR NAVIGATION LINKS
-// ========================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -69,7 +63,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 block: 'start'
             });
             
-            // Close mobile menu if open
+            // Close mobile menu if it's open
             const navbarToggler = document.querySelector('.navbar-toggler');
             const navbarCollapse = document.querySelector('.navbar-collapse');
             if (navbarCollapse.classList.contains('show')) {
@@ -79,9 +73,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ========================================
-// SKILL PROGRESS ANIMATION
-// ========================================
+// SKILL PROGRESS ANIMATION 
 const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -101,9 +93,7 @@ document.querySelectorAll('.skill-card').forEach(card => {
     skillObserver.observe(card);
 });
 
-// ========================================
 // SCROLL REVEAL ANIMATION
-// ========================================
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -121,9 +111,7 @@ document.querySelectorAll('.project-card, .about-card, .contact-container').forE
     revealObserver.observe(el);
 });
 
-// ========================================
 // SCROLL TO TOP BUTTON
-// ========================================
 const scrollTopBtn = document.getElementById('scrollTopBtn');
 
 window.addEventListener('scroll', () => {
@@ -141,9 +129,7 @@ scrollTopBtn.addEventListener('click', () => {
     });
 });
 
-// ========================================
 // ACTIVE NAVIGATION HIGHLIGHT
-// ========================================
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -167,9 +153,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// ========================================
 // PARALLAX EFFECT ON SCROLL
-// ========================================
 window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
     const circles = document.querySelectorAll('.circle');
@@ -180,9 +164,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// ========================================
 // PREVENT ANIMATION ON PAGE LOAD
-// ========================================
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
